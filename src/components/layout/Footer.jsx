@@ -19,7 +19,6 @@ const Footer = () => {
   }, []);
 
   const handleNavClick = (link) => {
-    setOpen(false);
 
     if (link.type === "route") {
       navigate(link.path);
