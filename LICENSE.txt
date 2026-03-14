@@ -1,0 +1,23 @@
+PrimeCut Barbershop Template License
+
+Copyright © 2026 GraceTech
+
+Permission is granted to any purchaser of this template to use it for
+personal or commercial projects.
+
+You are allowed to:
+- Use the template in personal projects
+- Use the template in commercial projects
+- Modify the template to suit your needs
+
+You are NOT allowed to:
+- Resell or redistribute this template as a template
+- Upload the template to template marketplaces
+- Share the source files publicly
+
+This template is provided "as is", without warranty of any kind.
+
+All demo images are for preview purposes only and should be replaced in production.
+
+GraceTech is not responsible for misuse of this template.
+
