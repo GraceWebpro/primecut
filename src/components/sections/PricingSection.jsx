@@ -48,62 +48,73 @@ const PricingSection = () => {
         </motion.div>
 
         {/* Filters */}
-        <div className="flex justify-center gap-6 mb-12 flex-wrap">
-          {categories.map((cat) => {
-            const Icon = cat.icon;
-            return (
-              <button
-                key={cat.label}
-                onClick={() => setFilter(cat.label)}
-                className={`flex items-center gap-2 px-6 py-2 rounded-full font-medium border border-white/20 transition ${
-                  filter === cat.label
-                    ? "bg-primary text-black shadow-lg"
-                    : "hover:bg-white/10"
-                }`}
-              >
-                {Icon && <Icon size={18} className="text-current" />}
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
+        <div className="flex gap-3 mb-12 overflow-x-auto md:justify-center scrollbar-hide no-scrollbar px-2">
+  {categories.map((cat) => {
+    const Icon = cat.icon;
+    return (
+      <button
+        key={cat.label}
+        onClick={() => setFilter(cat.label)}
+        className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium border border-white/20 whitespace-nowrap transition ${
+          filter === cat.label
+            ? "bg-primary text-black shadow-lg"
+            : "hover:bg-white/10"
+        }`}
+      >
+        {Icon && <Icon size={16} className="text-current" />}
+        {cat.label}
+      </button>
+    );
+  })}
+</div>
 
         {/* Service Cards */}
         <div className="grid md:grid-cols-2 gap-8">
-          {filteredServices.map((service, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.7 }}
-              className="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 flex gap-6 hover:scale-105 transition-transform duration-300 shadow-2xl"
-            >
-              {/* Image */}
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-32 h-32 object-cover rounded-2xl border border-white/10"
-              />
+  {filteredServices.map((service, idx) => (
+    <motion.div
+      key={idx}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: idx * 0.1, duration: 0.7 }}
+      className="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 flex flex-col md:flex-row gap-6 hover:scale-105 transition-transform duration-300 shadow-2xl"
+    >
+      
+      {/* Image */}
+      <img
+        src={service.image}
+        alt={service.title}
+        className="w-full h-48 md:w-32 md:h-32 object-cover rounded-2xl border border-white/10"
+      />
 
-              {/* Content */}
-              <div className="flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-primary mb-2">{service.title}</h3>
-                  <p className="text-gray-300">{service.description}</p>
-                </div>
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-xl font-semibold">{service.price}</span>
-                  <a
-                    href="#booking"
-                    className="px-4 py-2 bg-primary text-black font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
-                  >
-                    Book Now
-                  </a>
-                </div>              
-            </div>
-            </motion.div>
-          ))}
+      {/* Content */}
+      <div className="flex flex-col justify-between flex-1">
+        <div>
+          <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">
+            {service.title}
+          </h3>
+          <p className="text-gray-300 text-sm md:text-base">
+            {service.description}
+          </p>
         </div>
+
+        <div className="flex items-center justify-between mt-4">
+          <span className="text-lg md:text-xl font-semibold">
+            {service.price}
+          </span>
+
+          <a
+            href="#booking"
+            className="px-4 py-2 bg-primary text-black font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            Book Now
+          </a>
+        </div>
+      </div>
+
+    </motion.div>
+  ))}
+</div>
+
       </div>
     </section>
   );

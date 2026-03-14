@@ -89,7 +89,7 @@ const Footer = () => {
                   className={`
                   hover:text-primary cursor-pointer transition
                     
-                    ${isActive ? "text-primary" : ""}
+                    ${isActive ? "" : ""}
                   `}
                 >
                   {link.label}
@@ -144,25 +144,24 @@ const Footer = () => {
 
         </div>
 
-        {/* Divider */}
         {/* Bottom Footer */}
-<div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
 
-<p>
-  © 2026 PrimeCut Template. All rights reserved. Built with ❤️ by GraceTech.
-</p>
+        <p className='text-center'>
+          © 2026 PrimeCut Template. All rights reserved. Built with ❤️ by GraceTech.
+        </p>
 
-<div className="flex gap-6 mt-3 md:mt-0">
-  <a href="/privacy-policy" className="hover:text-primary transition">
-    Privacy Policy
-  </a>
+        <div className="flex gap-6 mt-3 md:mt-0">
+          <a href="/privacy-policy" className="hover:text-primary transition">
+            Privacy Policy
+          </a>
 
-  <a href="/terms" className="hover:text-primary transition">
-    Terms & Conditions
-  </a>
-</div>
+          <a href="/terms" className="hover:text-primary transition">
+            Terms & Conditions
+          </a>
+        </div>
 
-</div>
+        </div>
 
       </div>
 

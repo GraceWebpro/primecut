@@ -75,10 +75,11 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="flex gap-4 flex-wrap">
-              <Button>Book Appointment</Button>
-              <Button variant="outline">View Services</Button>
-            </div>
+            {/* Buttons */}
+<div className="flex flex-col sm:flex-row gap-4">
+  <Button className="w-full sm:w-auto">Book Appointment</Button>
+  <Button variant="outline" className="w-full sm:w-auto">View Services</Button>
+</div>
 
            {/* Floating Glass Trust Card */}
             <motion.div

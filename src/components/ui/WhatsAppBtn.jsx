@@ -10,7 +10,7 @@ const WhatsAppButton = () => {
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
-    <div className="group fixed bottom-6 right-6 z-50">
+    <div className="group fixed bottom-20 right-6 z-50">
 
     {/* Tooltip */}
     <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-black text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
